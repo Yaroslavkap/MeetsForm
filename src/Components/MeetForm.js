@@ -1,6 +1,5 @@
 import React from 'react'
 import Swal from 'sweetalert2'
-//import DatePicker from "react-datepicker"
 
 class MeetForm extends React.Component{
 
@@ -10,21 +9,12 @@ class MeetForm extends React.Component{
     constructor(props) {
         super(props)
         this.state = {
-            // first_name: "",
-            // last_name: "",
-            // //bio: "",
-            // email: "",
-            // //age: 1,
-            // avatar: "",
-            // //isHappy: true
-
             tower: "",
             floor: "",
             room: "",
             date: "",
             len: "",
             comments: "",
-
         }
     }
 
@@ -34,7 +24,7 @@ class MeetForm extends React.Component{
           
           <h2>Бронирование переговорной</h2>
 
-          <div class="field">
+          <div className="field">
             <select onChange={(e) => this.setState({ tower: e.target.value })}>
               <option defaultValue="" value="">Башня</option>
               <option value="A">А</option>
@@ -42,7 +32,7 @@ class MeetForm extends React.Component{
             </select>
           </div>
 
-          <div class ="field">
+          <div className ="field">
             <select onChange={(e) => this.setState({ floor: e.target.value })}>
               <option defaultValue="" value="">Этаж</option>
               <option value="3">3</option>
@@ -72,7 +62,7 @@ class MeetForm extends React.Component{
             </select>
           </div>
 
-          <div class = "field">
+          <div className = "field">
             <select onChange={(e) => this.setState({ room: e.target.value })}>
               <option defaultValue="" value="">Переговорная</option>
               <option value="1">1</option>
@@ -87,19 +77,15 @@ class MeetForm extends React.Component{
               <option value="10">10</option>
             </select>
           </div>
-
-          {/* <label>Дата и время</label> */}
-
           
-          <div class="field">
+          <div className="field">
             <input id="DateTime" type="datetime-local"
-            //value="2023-05-09T19:30"
             min="2023-01-07T00:00" max="2024-06-14T00:00"
             onChange={(e) => this.setState({ date: e.target.value })}>
             </input>
           </div>
 
-          <div class="field">
+          <div className="field">
             <select onChange={(e) => this.setState({ len: e.target.value })}>
               <option defaultValue="" value="">Длительность</option>
               <option value="30">30 минут</option>
@@ -109,14 +95,12 @@ class MeetForm extends React.Component{
             </select>
           </div>
 
-          <div class="field">
+          <div className="field">
             <textarea placeholder='Комментарии' onChange={(e) => this.setState({ comments: e.target.value })}></textarea>
           </div>
           
-          <div class="field field-buttons">
-            {/* <div class="btn1 field field-buttons"> */}
-              <button class="btn1" type='button' onClick={() => {
-                //this.myForm.reset()
+          <div className="field field-buttons">
+              <button className="btn1" type='button' onClick={() => {
                 if(this.state.tower !== "" && this.state.floor !== "" && this.state.room !== "" && this.state.date !== "" && this.state.len !== "") {
                   this.userAdd = {
                     tower: this.state.tower,
@@ -127,8 +111,6 @@ class MeetForm extends React.Component{
                     comments: this.state.comments,
                 }
                 
-                //if (this.props.user)
-                //  this.userAdd.id = this.props.user.id
                 this.props.onAdd(this.userAdd)
               } else {
                 //console.log("Error")
@@ -141,10 +123,8 @@ class MeetForm extends React.Component{
             }
 
               }>Отправить</button>
-            {/* </div> */}
 
-            {/* <div class="btn2 field field-buttons"> */}
-              <button class="btn2" type='button' onClick={() => {
+              <button className="btn2" type='button' onClick={() => {
                 this.myForm.reset()
                 this.setState({
                   tower: "",
@@ -156,7 +136,6 @@ class MeetForm extends React.Component{
                 })
               }
             }>Очистить</button>
-            {/* </div> */}
           </div>
 
           
