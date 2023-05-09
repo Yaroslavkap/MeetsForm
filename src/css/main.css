@@ -9,8 +9,9 @@ body {
   color: #fff;
   font-family: 'Montserrat', sans-serif;
   font-weight: 300;
-
   background-color: #edeef0;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
@@ -18,14 +19,17 @@ body {
   font-weight: 600;
   font-size: 2em;
   background: #447bba;
+  margin-bottom: 1em;
+
 }
 
 .panel {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100%;
   margin: 0 auto;
+
 }
 
 form {
